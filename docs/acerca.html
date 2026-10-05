@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acerca · Cuentos clásicos en español</title>
+<meta name="description" content="Criterios, fuentes y derechos de la antología.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body class="">
+<script>
+  (function () {
+    var t = localStorage.getItem('antologia-tema');
+    if (t) document.body.dataset.tema = t;
+    var s = localStorage.getItem('antologia-cuerpo');
+    if (s) document.body.dataset.cuerpo = s;
+  })();
+</script>
+<header class="barra">
+  <a class="marca" href="index.html"><span class="marca-glifo">§</span> Cuentos clásicos en español</a>
+  <nav class="barra-nav"><a href="index.html">Antología</a><a href="acerca.html" class="activo">Acerca</a></nav>
+  <div class="barra-acciones">
+    <button class="boton-icono" data-accion="tema" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+<main class="envoltura prosa">
+  <h1>Acerca de esta antología</h1>
+  <p>Una selección de dieciséis obras completas de dominio público, repartidas entre dos
+     tradiciones que se tocan más de lo que parece: la ciencia ficción temprana en lengua
+     española y el relato de detección.</p>
+
+  <h2>Criterio de selección</h2>
+  <ul>
+    <li><strong>Dominio público.</strong> Todos los autores murieron hace más de ochenta años y
+        los textos provienen de ediciones anteriores a 1930.</li>
+    <li><strong>Autores canónicos.</strong> Lugones, Holmberg, Darío, Alarcón y Pardo Bazán
+        escribieron en español; Poe y Conan Doyle aparecen en traducciones de época —la de
+        Carlos Olivera (Buenos Aires, 1884) y la española de 1909— que son documentos
+        literarios por derecho propio.</li>
+    <li><strong>Textos completos.</strong> No hay fragmentos ni resúmenes. Cada página contiene
+        la obra íntegra.</li>
+  </ul>
+
+  <h2>Sobre la transcripción</h2>
+  <p>Los textos se obtuvieron de <a href="https://es.wikisource.org">Wikisource en español</a>,
+     que los transcribe y coteja contra los facsímiles originales. Se conservó la ortografía de
+     la época (<em>fué</em>, <em>á</em>, <em>razon</em>): no es una errata, es el castellano
+     impreso de 1879 o de 1906. Solo se eliminó el aparato de la edición digital —números de
+     página, portadillas, índices y enlaces internos— para dejar el texto corrido.</p>
+
+  <h2>Las obras</h2>
+  <div class="tabla-envoltura">
+  <table>
+    <thead><tr><th>Obra</th><th>Autor</th><th>Año</th><th>Género</th><th>Palabras</th>
+    <th>Fuente</th></tr></thead>
+    <tbody><tr><td>Yzur</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>2.902</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/Yzur">Wikisource</a></td></tr><tr><td>La lluvia de fuego</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>3.564</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/La_lluvia_de_fuego">Wikisource</a></td></tr><tr><td>La fuerza Omega</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>3.648</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/La_fuerza_Omega">Wikisource</a></td></tr><tr><td>Un fenómeno inexplicable</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>2.693</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/Un_fenómeno_inexplicable">Wikisource</a></td></tr><tr><td>Viola acherontia</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>2.030</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/Viola_acherontia">Wikisource</a></td></tr><tr><td>El Psychon</td><td>Leopoldo Lugones</td><td>1906</td><td>Ciencia ficción</td><td>3.174</td><td><a href="https://es.wikisource.org/wiki/Las_Fuerzas_Extrañas/El_psychon">Wikisource</a></td></tr><tr><td>Horacio Kalibang o los autómatas</td><td>Eduardo Ladislao Holmberg</td><td>1879</td><td>Ciencia ficción</td><td>5.814</td><td><a href="https://es.wikisource.org/wiki/Horacio_Kalibang_o_los_autómatas">Wikisource</a></td></tr><tr><td>El rubí</td><td>Rubén Darío</td><td>1888</td><td>Ciencia ficción</td><td>1.835</td><td><a href="https://es.wikisource.org/wiki/El_rubí">Wikisource</a></td></tr><tr><td>La extraña muerte de Fray Pedro</td><td>Rubén Darío</td><td>1913</td><td>Ciencia ficción</td><td>1.428</td><td><a href="https://es.wikisource.org/wiki/La_extraña_muerte_de_Fray_Pedro">Wikisource</a></td></tr><tr><td>El caso de la señorita Amelia</td><td>Rubén Darío</td><td>1894</td><td>Ciencia ficción</td><td>1.956</td><td><a href="https://es.wikisource.org/wiki/El_caso_de_la_señorita_Amelia">Wikisource</a></td></tr><tr><td>El clavo (Causa célebre)</td><td>Pedro Antonio de Alarcón</td><td>1853</td><td>Policial</td><td>11.227</td><td><a href="https://es.wikisource.org/wiki/El_clavo/I">Wikisource</a></td></tr><tr><td>La bolsa de huesos</td><td>Eduardo Ladislao Holmberg</td><td>1896</td><td>Policial</td><td>19.360</td><td><a href="https://es.wikisource.org/wiki/La_bolsa_de_huesos">Wikisource</a></td></tr><tr><td>La cita</td><td>Emilia Pardo Bazán</td><td>1912</td><td>Policial</td><td>1.199</td><td><a href="https://es.wikisource.org/wiki/La_cita_(Pardo_Bazán)">Wikisource</a></td></tr><tr><td>Los crímenes de la calle Morgue</td><td>Edgar Allan Poe</td><td>1841</td><td>Policial</td><td>13.483</td><td><a href="https://es.wikisource.org/wiki/Los_crímenes_de_la_calle_Morgue_(Olivera_tr.)">Wikisource</a></td></tr><tr><td>La carta robada</td><td>Edgar Allan Poe</td><td>1844</td><td>Policial</td><td>7.176</td><td><a href="https://es.wikisource.org/wiki/La_carta_robada_(Olivera_tr.)">Wikisource</a></td></tr><tr><td>El carbunclo azul</td><td>Arthur Conan Doyle</td><td>1892</td><td>Policial</td><td>7.943</td><td><a href="https://es.wikisource.org/wiki/El_carbunclo_azul">Wikisource</a></td></tr></tbody>
+  </table>
+  </div>
+
+  <h2>Derechos</h2>
+  <p>Las obras están en dominio público. El código y el diseño de este sitio se publican bajo
+     licencia MIT. Las transcripciones de Wikisource se reutilizan conforme a sus términos;
+     cada cuento enlaza su página de origen.</p>
+</main>
+<footer class="pie">
+  <p>Textos de dominio público transcritos por <a href="https://es.wikisource.org">Wikisource</a>.
+     Se respeta la ortografía de las ediciones originales.</p>
+  <p><a href="acerca.html">Sobre esta antología y sus fuentes</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

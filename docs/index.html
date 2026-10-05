@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuentos clásicos en español · ciencia ficción y policial</title>
+<meta name="description" content="Antología de cuentos clásicos en español de dominio público: ciencia ficción y relato policial, textos completos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body class="">
+<script>
+  (function () {
+    var t = localStorage.getItem('antologia-tema');
+    if (t) document.body.dataset.tema = t;
+    var s = localStorage.getItem('antologia-cuerpo');
+    if (s) document.body.dataset.cuerpo = s;
+  })();
+</script>
+<header class="barra">
+  <a class="marca" href="index.html"><span class="marca-glifo">§</span> Cuentos clásicos en español</a>
+  <nav class="barra-nav"><a href="index.html" class="activo">Antología</a><a href="acerca.html">Acerca</a></nav>
+  <div class="barra-acciones">
+    <button class="boton-icono" data-accion="tema" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+<main class="envoltura">
+  <section class="portada">
+    <p class="portada-ojo">Dominio público · textos completos</p>
+    <h1>Ciencia ficción y relato policial <br> en lengua española</h1>
+    <p class="portada-bajada">
+      16 obras completas de autores clásicos — Lugones, Holmberg, Darío, Alarcón,
+      Pardo Bazán, Poe y Conan Doyle en traducciones de época — transcritas desde Wikisource
+      y presentadas para leer sin distracciones.
+    </p>
+    <ul class="portada-datos">
+      <li><strong>10</strong> ciencia ficción</li>
+      <li><strong>6</strong> policiales</li>
+      <li><strong>89.432</strong> palabras</li>
+      <li><strong>7 h</strong> de lectura</li>
+    </ul>
+  </section>
+
+  <section class="controles" aria-label="Filtros">
+    <div class="filtros" role="group">
+      <button class="chip activo" data-filtro="todos">Todo</button>
+      <button class="chip" data-filtro="ciencia-ficcion">Ciencia ficción</button>
+      <button class="chip" data-filtro="policial">Policial</button>
+    </div>
+    <div class="controles-derecha">
+      <select id="filtro-autor" aria-label="Filtrar por autor">
+        <option value="">Todos los autores</option><option value="Arthur Conan Doyle">Arthur Conan Doyle</option><option value="Edgar Allan Poe">Edgar Allan Poe</option><option value="Eduardo Ladislao Holmberg">Eduardo Ladislao Holmberg</option><option value="Emilia Pardo Bazán">Emilia Pardo Bazán</option><option value="Leopoldo Lugones">Leopoldo Lugones</option><option value="Pedro Antonio de Alarcón">Pedro Antonio de Alarcón</option><option value="Rubén Darío">Rubén Darío</option>
+      </select>
+      <select id="orden" aria-label="Ordenar">
+        <option value="curado">Orden de la antología</option>
+        <option value="corto">Más breves primero</option>
+        <option value="largo">Más extensos primero</option>
+        <option value="anio">Por año</option>
+      </select>
+      <input id="buscar" type="search" placeholder="Buscar título, autor o tema…"
+             aria-label="Buscar">
+    </div>
+  </section>
+
+  <p class="sin-resultados" hidden>No hay cuentos que coincidan con esa búsqueda.</p>
+  <section class="rejilla" id="rejilla">
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="yzur leopoldo lugones un hombre decide probar que los monos son humanos que renunciaron al habla, y somete a su chimpancé a una pedagogía implacable."
+  data-palabras="2902" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/yzur.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">15 min</span>
+    </div>
+    <h2>Yzur</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Un hombre decide probar que los monos son humanos que renunciaron al habla, y somete a su chimpancé a una pedagogía implacable.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="la lluvia de fuego leopoldo lugones evocación de un hombre acomodado de gomorra mientras del cielo empieza a caer una menudísima lluvia de cobre incandescente."
+  data-palabras="3564" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/la-lluvia-de-fuego.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">18 min</span>
+    </div>
+    <h2>La lluvia de fuego</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Evocación de un hombre acomodado de Gomorra mientras del cielo empieza a caer una menudísima lluvia de cobre incandescente.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="la fuerza omega leopoldo lugones un inventor logra concentrar el sonido hasta convertirlo en un arma capaz de pulverizar la materia."
+  data-palabras="3648" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/la-fuerza-omega.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">18 min</span>
+    </div>
+    <h2>La fuerza Omega</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Un inventor logra concentrar el sonido hasta convertirlo en un arma capaz de pulverizar la materia.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="un fenómeno inexplicable leopoldo lugones un viajero se hospeda en casa de un inglés atormentado por una sombra que no se corresponde con su cuerpo."
+  data-palabras="2693" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/un-fenomeno-inexplicable.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">13 min</span>
+    </div>
+    <h2>Un fenómeno inexplicable</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Un viajero se hospeda en casa de un inglés atormentado por una sombra que no se corresponde con su cuerpo.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="viola acherontia leopoldo lugones un jardinero obsesivo intenta criar una violeta que mate: sugestión vegetal, cruzas y crueldad de invernadero."
+  data-palabras="2030" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/viola-acherontia.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">10 min</span>
+    </div>
+    <h2>Viola acherontia</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Un jardinero obsesivo intenta criar una violeta que mate: sugestión vegetal, cruzas y crueldad de invernadero.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Leopoldo Lugones"
+  data-buscar="el psychon leopoldo lugones un sabio consigue licuar el pensamiento y guardarlo en un frasco. el frasco, naturalmente, se abre."
+  data-palabras="3174" data-anio="1906">
+  <a class="ficha-enlace" href="cuentos/el-psychon.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">16 min</span>
+    </div>
+    <h2>El Psychon</h2>
+    <p class="ficha-autor">Leopoldo Lugones</p>
+    <p class="ficha-teaser">Un sabio consigue licuar el pensamiento y guardarlo en un frasco. El frasco, naturalmente, se abre.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1906</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Eduardo Ladislao Holmberg"
+  data-buscar="horacio kalibang o los autómatas eduardo ladislao holmberg un constructor alemán de autómatas siembra un pueblo de muñecos indistinguibles de las personas, y nadie sabe ya quién es de carne."
+  data-palabras="5814" data-anio="1879">
+  <a class="ficha-enlace" href="cuentos/horacio-kalibang.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">29 min</span>
+    </div>
+    <h2>Horacio Kalibang o los autómatas</h2>
+    <p class="ficha-autor">Eduardo Ladislao Holmberg</p>
+    <p class="ficha-teaser">Un constructor alemán de autómatas siembra un pueblo de muñecos indistinguibles de las personas, y nadie sabe ya quién es de carne.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1879</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Rubén Darío"
+  data-buscar="el rubí rubén darío los gnomos se indignan: un químico parisino ha fabricado en su laboratorio un rubí artificial idéntico al verdadero."
+  data-palabras="1835" data-anio="1888">
+  <a class="ficha-enlace" href="cuentos/el-rubi.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">9 min</span>
+    </div>
+    <h2>El rubí</h2>
+    <p class="ficha-autor">Rubén Darío</p>
+    <p class="ficha-teaser">Los gnomos se indignan: un químico parisino ha fabricado en su laboratorio un rubí artificial idéntico al verdadero.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1888</span><span>Nicaragua</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Rubén Darío"
+  data-buscar="la extraña muerte de fray pedro rubén darío un fraile se entrega al estudio de los rayos x y decide fotografiar aquello que ningún hombre debería ver."
+  data-palabras="1428" data-anio="1913">
+  <a class="ficha-enlace" href="cuentos/la-extrana-muerte-de-fray-pedro.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">7 min</span>
+    </div>
+    <h2>La extraña muerte de Fray Pedro</h2>
+    <p class="ficha-autor">Rubén Darío</p>
+    <p class="ficha-teaser">Un fraile se entrega al estudio de los rayos X y decide fotografiar aquello que ningún hombre debería ver.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1913</span><span>Nicaragua</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="ciencia-ficcion" data-autor="Rubén Darío"
+  data-buscar="el caso de la señorita amelia rubén darío el doctor z narra, una noche de fin de año, la historia de una niña que lleva veintitrés años sin crecer un solo día."
+  data-palabras="1956" data-anio="1894">
+  <a class="ficha-enlace" href="cuentos/el-caso-de-la-senorita-amelia.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-ciencia-ficcion">CF</span>
+      <span class="ficha-tiempo">10 min</span>
+    </div>
+    <h2>El caso de la señorita Amelia</h2>
+    <p class="ficha-autor">Rubén Darío</p>
+    <p class="ficha-teaser">El doctor Z narra, una noche de fin de año, la historia de una niña que lleva veintitrés años sin crecer un solo día.</p>
+    <p class="ficha-tags"><span>Ciencia ficción</span><span>1894</span><span>Nicaragua</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Pedro Antonio de Alarcón"
+  data-buscar="el clavo (causa célebre) pedro antonio de alarcón una calavera aparece atravesada por un clavo. un juez instructor sigue la pista del crimen hasta donde menos querría llegar."
+  data-palabras="11227" data-anio="1853">
+  <a class="ficha-enlace" href="cuentos/el-clavo.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">56 min</span>
+    </div>
+    <h2>El clavo (Causa célebre)</h2>
+    <p class="ficha-autor">Pedro Antonio de Alarcón</p>
+    <p class="ficha-teaser">Una calavera aparece atravesada por un clavo. Un juez instructor sigue la pista del crimen hasta donde menos querría llegar.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1853</span><span>España</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Eduardo Ladislao Holmberg"
+  data-buscar="la bolsa de huesos eduardo ladislao holmberg un médico aficionado a la deducción recibe una bolsa con dos cráneos y decide resolver por su cuenta un caso que la policía ni siquiera ve."
+  data-palabras="19360" data-anio="1896">
+  <a class="ficha-enlace" href="cuentos/la-bolsa-de-huesos.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">97 min</span>
+    </div>
+    <h2>La bolsa de huesos</h2>
+    <p class="ficha-autor">Eduardo Ladislao Holmberg</p>
+    <p class="ficha-teaser">Un médico aficionado a la deducción recibe una bolsa con dos cráneos y decide resolver por su cuenta un caso que la policía ni siquiera ve.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1896</span><span>Argentina</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Emilia Pardo Bazán"
+  data-buscar="la cita emilia pardo bazán una mujer acude a una cita secreta y descubre, demasiado tarde, qué clase de hombre la espera del otro lado de la puerta."
+  data-palabras="1199" data-anio="1912">
+  <a class="ficha-enlace" href="cuentos/la-cita.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">6 min</span>
+    </div>
+    <h2>La cita</h2>
+    <p class="ficha-autor">Emilia Pardo Bazán</p>
+    <p class="ficha-teaser">Una mujer acude a una cita secreta y descubre, demasiado tarde, qué clase de hombre la espera del otro lado de la puerta.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1912</span><span>España</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Edgar Allan Poe"
+  data-buscar="los crímenes de la calle morgue edgar allan poe dos mujeres aparecen asesinadas en una habitación cerrada por dentro. auguste dupin razona donde la policía solo mira."
+  data-palabras="13483" data-anio="1841">
+  <a class="ficha-enlace" href="cuentos/los-crimenes-de-la-calle-morgue.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">67 min</span>
+    </div>
+    <h2>Los crímenes de la calle Morgue</h2>
+    <p class="ficha-autor">Edgar Allan Poe</p>
+    <p class="ficha-teaser">Dos mujeres aparecen asesinadas en una habitación cerrada por dentro. Auguste Dupin razona donde la policía solo mira.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1841</span><span>Estados Unidos</span><span>traducción</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Edgar Allan Poe"
+  data-buscar="la carta robada edgar allan poe la policía ha registrado milímetro a milímetro la casa del ministro y no encuentra la carta. dupin solo necesita una visita."
+  data-palabras="7176" data-anio="1844">
+  <a class="ficha-enlace" href="cuentos/la-carta-robada.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">36 min</span>
+    </div>
+    <h2>La carta robada</h2>
+    <p class="ficha-autor">Edgar Allan Poe</p>
+    <p class="ficha-teaser">La policía ha registrado milímetro a milímetro la casa del ministro y no encuentra la carta. Dupin solo necesita una visita.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1844</span><span>Estados Unidos</span><span>traducción</span></p>
+  </a>
+</article>
+<article class="ficha" data-genero="policial" data-autor="Arthur Conan Doyle"
+  data-buscar="el carbunclo azul arthur conan doyle un sombrero viejo, un ganso de navidad y, dentro del buche, la piedra preciosa más buscada de londres."
+  data-palabras="7943" data-anio="1892">
+  <a class="ficha-enlace" href="cuentos/el-carbunclo-azul.html">
+    <div class="ficha-cabeza">
+      <span class="sello sello-policial">Policial</span>
+      <span class="ficha-tiempo">40 min</span>
+    </div>
+    <h2>El carbunclo azul</h2>
+    <p class="ficha-autor">Arthur Conan Doyle</p>
+    <p class="ficha-teaser">Un sombrero viejo, un ganso de Navidad y, dentro del buche, la piedra preciosa más buscada de Londres.</p>
+    <p class="ficha-tags"><span>Policial</span><span>1892</span><span>Reino Unido</span><span>traducción</span></p>
+  </a>
+</article>
+  </section>
+</main>
+<footer class="pie">
+  <p>Textos de dominio público transcritos por <a href="https://es.wikisource.org">Wikisource</a>.
+     Se respeta la ortografía de las ediciones originales.</p>
+  <p><a href="acerca.html">Sobre esta antología y sus fuentes</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
