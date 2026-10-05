@@ -161,3 +161,64 @@ STORIES = [
         note="Sherlock Holmes en versión castellana de 1909, con su sabor de época.",
     ),
 ]
+
+
+# Cuentos en inglés traducidos para esta antología. Dominio público en los Estados Unidos
+# por falta de renovación del copyright; ver la nota legal en acerca.html.
+PD_EEUU = ("Dominio público en los Estados Unidos: la investigación de Project Gutenberg no "
+           "halló constancia de que se renovara el copyright de la publicación original. "
+           "En países cuyo plazo es la vida del autor más 70 u 80 años, la obra puede seguir "
+           "protegida.")
+
+TRANSLATED = [
+    dict(
+        id="juventud", slug="youth", title="Juventud", original_title="Youth",
+        author="Isaac Asimov", year=1952, country="Estados Unidos", genre=SF, kind="Cuento",
+        collection="Space Science Fiction, mayo de 1952",
+        gutenberg_id=31547, pd_note=PD_EEUU,
+        teaser="Dos muchachos esconden en un establo a dos animalitos caídos del cielo, "
+               "convencidos de que harán fortuna con ellos en un circo.",
+        note="Asimov en su mejor registro de giro final: el último párrafo reordena el cuento "
+             "entero.",
+    ),
+    dict(
+        id="la-posesion-magnifica", slug="the-magnificent-possession",
+        title="La posesión magnífica", original_title="The Magnificent Possession",
+        author="Isaac Asimov", year=1940, country="Estados Unidos", genre=SF, kind="Cuento",
+        collection="Future Fiction, julio de 1940",
+        gutenberg_id=76871, pd_note=PD_EEUU,
+        teaser="Un químico oscuro descubre un recubrimiento incorruptible y descubre también "
+               "que casi nadie quiere que semejante cosa exista.",
+        note="Asimov con veinte años: comedia seca sobre la ciencia y el dinero.",
+    ),
+    dict(
+        id="reunamonos", slug="lets-get-together", title="Reunámonos",
+        original_title="Let's Get Together",
+        author="Isaac Asimov", year=1957, country="Estados Unidos", genre=SF, kind="Cuento",
+        collection="Infinity Science Fiction, febrero de 1957",
+        gutenberg_id=68377, pd_note=PD_EEUU,
+        teaser="Diez robots humanoides se han infiltrado en el país. Por separado son inofensivos; "
+               "juntos, son una bomba.",
+        note="Guerra Fría, cerebros positrónicos y una cacería contrarreloj.",
+    ),
+    dict(
+        id="everest", slug="everest", title="Everest", original_title="Everest",
+        author="Isaac Asimov", year=1953, country="Estados Unidos", genre=SF, kind="Viñeta",
+        collection="Universe Science Fiction, diciembre de 1953",
+        gutenberg_id=77254, pd_note=PD_EEUU,
+        teaser="La expedición de 1952 fracasa una y otra vez. Las fotografías de la cumbre "
+               "muestran algo que no debería estar ahí.",
+        note="Escrito meses antes de que Hillary y Tenzing llegaran a la cima, y desmentido por "
+             "la historia a las pocas semanas.",
+    ),
+    dict(
+        id="asnos-estupidos", slug="silly-asses", title="Asnos estúpidos",
+        original_title="Silly Asses",
+        author="Isaac Asimov", year=1958, country="Estados Unidos", genre=SF, kind="Viñeta",
+        collection="Future Science Fiction, febrero de 1958",
+        gutenberg_id=78751, pd_note=PD_EEUU,
+        teaser="Naron lleva el registro de las razas galácticas que alcanzan la madurez. Acaba "
+               "de tachar un nombre de la lista.",
+        note="Cuatrocientas palabras y un chiste que sigue doliendo.",
+    ),
+]

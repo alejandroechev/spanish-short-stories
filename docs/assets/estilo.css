@@ -198,6 +198,17 @@ body[data-cuerpo="s"]  .texto { --cuerpo: 1.15rem; }
 body[data-cuerpo="l"]  .texto { --cuerpo: 1.38rem; }
 body[data-cuerpo="xl"] .texto { --cuerpo: 1.55rem; }
 
+.lectura-original { margin: -.2rem 0 .6rem; font-size: .85rem; color: var(--tinta-suave); }
+.aviso-legal {
+  background: color-mix(in srgb, var(--acento) 7%, transparent);
+  border-left: 2px solid var(--acento); border-radius: .3rem;
+  padding: .7rem .9rem; margin: 0 0 1rem; font-size: .8rem;
+}
+.texto p.separador {
+  text-align: center; text-indent: 0; letter-spacing: .6em; color: var(--tinta-suave);
+  margin: 2em 0; font-size: .9em;
+}
+.texto p.separador + p { text-indent: 0; margin-top: 0; }
 .fin { text-align: center; color: var(--acento); margin: 3rem 0; font-size: 1.3rem; }
 .fuente {
   font-size: .82rem; color: var(--tinta-suave); border-top: 1px solid var(--borde);

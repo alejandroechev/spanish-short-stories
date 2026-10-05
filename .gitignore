@@ -1,5 +1,7 @@
 raw/
 shots/
+en/
+es/parts/
 probe*.py
 __pycache__/
 *.pyc

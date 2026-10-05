@@ -6,7 +6,7 @@ import unicodedata
 
 from bs4 import BeautifulSoup, Comment, NavigableString
 
-from catalog import STORIES
+from catalog import STORIES, TRANSLATED
 
 RAW = "raw"
 ALLOWED = {"p", "em", "strong", "i", "b", "br", "blockquote", "h2", "h3", "hr", "small"}
@@ -260,6 +260,44 @@ def build_story(story):
     return html, words
 
 
+SEPARATOR = re.compile(r"^[\s*·.\-—_]+$")
+
+
+def translated_body(slug):
+    """Convierte los párrafos traducidos en HTML, respetando cursivas y cortes de escena."""
+    paragraphs = json.load(open(os.path.join("es", slug + ".json")))["paragraphs"]
+    blocks = []
+    for paragraph in paragraphs:
+        text = paragraph.strip()
+        if not text:
+            continue
+        if SEPARATOR.match(text):
+            blocks.append('<p class="separador">* * *</p>')
+            continue
+        if ROMAN_ONLY.match(text):
+            blocks.append('<h2 class="chapter">%s</h2>' % text.rstrip("."))
+            continue
+        if looks_like_heading(text):
+            blocks.append('<h2 class="chapter">%s</h2>' % text)
+            continue
+        text = (text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                    .replace("&lt;em&gt;", "<em>").replace("&lt;/em&gt;", "</em>"))
+        blocks.append(f"<p>{text}</p>")
+    return "\n".join(blocks)
+
+
+def build_translated(meta):
+    html = translated_body(meta["slug"])
+    words = len(plain(html).split())
+    record = {k: v for k, v in meta.items() if k != "slug"}
+    record["body"] = html
+    record["words"] = words
+    record["minutes"] = max(1, round(words / 200))
+    record["translator"] = "traducción de esta antología"
+    record["source_urls"] = ["https://www.gutenberg.org/ebooks/%d" % meta["gutenberg_id"]]
+    return record
+
+
 def main():
     built = []
     for story in STORIES:
@@ -273,6 +311,19 @@ def main():
         ]
         built.append(record)
         print(f"{words:>7} palabras  {story['id']}")
+
+    traducidos = []
+    for meta in TRANSLATED:
+        if not os.path.exists(os.path.join("es", meta["slug"] + ".json")):
+            print(f"        (falta la traducción de {meta['slug']}, se omite)")
+            continue
+        record = build_translated(meta)
+        traducidos.append(record)
+        print(f"{record['words']:>7} palabras  {record['id']}  (traducido)")
+
+    # La antología agrupa por género: primero la ciencia ficción, luego el policial.
+    built = ([s for s in built if s["genre"] == "ciencia-ficcion"] + traducidos
+             + [s for s in built if s["genre"] == "policial"])
     json.dump(built, open("stories.json", "w"), ensure_ascii=False, indent=1)
     print("\nTotal:", sum(b["words"] for b in built), "palabras en", len(built), "obras")
 

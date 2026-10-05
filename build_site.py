@@ -100,8 +100,8 @@ def build_index(stories):
     <h1>Ciencia ficción y relato policial <br> en lengua española</h1>
     <p class="portada-bajada">
       {len(stories)} obras completas de autores clásicos — Lugones, Holmberg, Darío, Alarcón,
-      Pardo Bazán, Poe y Conan Doyle en traducciones de época — transcritas desde Wikisource
-      y presentadas para leer sin distracciones.
+      Pardo Bazán, Asimov, Poe y Conan Doyle — transcritas desde Wikisource y Project Gutenberg,
+      con cinco cuentos de Asimov traducidos al español para esta antología.
     </p>
     <ul class="portada-datos">
       <li><strong>{len(sf)}</strong> ciencia ficción</li>
@@ -157,12 +157,25 @@ def build_story_page(story, previous, following):
     if story.get("collection"):
         meta.append(f"<em>{esc(story['collection'])}</em>")
     if story.get("translator"):
-        meta.append(f"trad. {esc(story['translator'])}")
-    sources = " · ".join(
-        f'<a href="{esc(u)}">{esc(u.rsplit("/", 1)[-1].replace("_", " "))}</a>'
-        for u in story["source_urls"][:3]
-    )
-    if len(story["source_urls"]) > 3:
+        label = story["translator"]
+        meta.append(esc(label) if label.startswith("traducción")
+                    else f"trad. {esc(label)}")
+    original = ""
+    if story.get("original_title"):
+        original = (f'<p class="lectura-original">Título original: '
+                    f'<em>{esc(story["original_title"])}</em></p>')
+    aviso = ""
+    if story.get("pd_note"):
+        aviso = f'<p class="aviso-legal">{esc(story["pd_note"])}</p>' 
+    if story.get("gutenberg_id"):
+        sources = (f'<a href="{esc(story["source_urls"][0])}">Project Gutenberg #'
+                   f'{story["gutenberg_id"]}</a> · texto original en inglés')
+    else:
+        sources = " · ".join(
+            f'<a href="{esc(u)}">{esc(u.rsplit("/", 1)[-1].replace("_", " "))}</a>'
+            for u in story["source_urls"][:3]
+        )
+    if not story.get("gutenberg_id") and len(story["source_urls"]) > 3:
         sources += f' · y {len(story["source_urls"]) - 3} páginas más'
     chapters = re.findall(r'<h2 class="chapter">(.*?)</h2>', story["body"])
     index_html = ""
@@ -188,6 +201,7 @@ def build_story_page(story, previous, following):
        {story['minutes']} min · {num(story['words'])} palabras</p>
     <h1>{esc(story['title'])}</h1>
     <p class="lectura-meta">{' · '.join(meta)}</p>
+    {original}
     <p class="lectura-nota">{esc(story.get('note', ''))}</p>
     <div class="herramientas">
       <button class="boton-icono" data-accion="cuerpo-menos" title="Reducir texto">A−</button>
@@ -200,6 +214,7 @@ def build_story_page(story, previous, following):
     </div>
     <p class="fin">❦</p>
     <section class="fuente">
+      {aviso}
       <p><strong>Fuente:</strong> {sources}</p>
       <p>Obra en dominio público. {esc(story['author'])} ·
          {esc(story['country'])} · {story['year']}.</p>
@@ -216,7 +231,8 @@ def build_about(stories):
     rows = "".join(
         f"<tr><td>{esc(s['title'])}</td><td>{esc(s['author'])}</td><td>{s['year']}</td>"
         f"<td>{GENRE_LABEL[s['genre']]}</td><td>{num(s['words'])}</td>"
-        f"<td><a href=\"{esc(s['source_urls'][0])}\">Wikisource</a></td></tr>"
+        f"<td><a href=\"{esc(s['source_urls'][0])}\">"
+        f"{'Gutenberg' if s.get('gutenberg_id') else 'Wikisource'}</a></td></tr>"
         for s in stories
     )
     body = f"""{nav(0, "acerca")}
@@ -236,6 +252,8 @@ def build_about(stories):
         literarios por derecho propio.</li>
     <li><strong>Textos completos.</strong> No hay fragmentos ni resúmenes. Cada página contiene
         la obra íntegra.</li>
+    <li><strong>Siempre en español.</strong> Lo escrito en inglés se lee aquí traducido: Poe y
+        Conan Doyle en versiones de época, Asimov en traducción hecha para esta antología.</li>
   </ul>
 
   <h2>Sobre la transcripción</h2>
@@ -244,6 +262,21 @@ def build_about(stories):
      la época (<em>fué</em>, <em>á</em>, <em>razon</em>): no es una errata, es el castellano
      impreso de 1879 o de 1906. Solo se eliminó el aparato de la edición digital —números de
      página, portadillas, índices y enlaces internos— para dejar el texto corrido.</p>
+
+  <h2>Las traducciones propias</h2>
+  <p>Cinco cuentos de Isaac Asimov se publican aquí en traducción al español hecha para esta
+     antología, porque no existía una versión libre disponible. Son relatos aparecidos en
+     revistas estadounidenses entre 1940 y 1958 cuyo copyright no fue renovado en el plazo que
+     exigía la ley de entonces, y que por eso están en dominio público en los Estados Unidos;
+     Project Gutenberg los distribuye con esa base.</p>
+  <p class="aviso-legal">El dominio público por falta de renovación es específico de los Estados
+     Unidos. En España, Argentina, Chile, México y en general donde rige el plazo de vida del
+     autor más 70 u 80 años, la obra de Asimov —fallecido en 1992— puede seguir protegida, y una
+     traducción es obra derivada. Consulta la legislación de tu país antes de reutilizar estos
+     textos.</p>
+  <p>Las traducciones siguen una guía fija —fidelidad párrafo a párrafo, español neutro, diálogo
+     con raya— documentada en <code>TRADUCCION.md</code>, y un script valida que el número de
+     párrafos coincida exactamente con el original antes de publicarlas.</p>
 
   <h2>Las obras</h2>
   <div class="tabla-envoltura">
@@ -464,6 +497,17 @@ body[data-cuerpo="s"]  .texto { --cuerpo: 1.15rem; }
 body[data-cuerpo="l"]  .texto { --cuerpo: 1.38rem; }
 body[data-cuerpo="xl"] .texto { --cuerpo: 1.55rem; }
 
+.lectura-original { margin: -.2rem 0 .6rem; font-size: .85rem; color: var(--tinta-suave); }
+.aviso-legal {
+  background: color-mix(in srgb, var(--acento) 7%, transparent);
+  border-left: 2px solid var(--acento); border-radius: .3rem;
+  padding: .7rem .9rem; margin: 0 0 1rem; font-size: .8rem;
+}
+.texto p.separador {
+  text-align: center; text-indent: 0; letter-spacing: .6em; color: var(--tinta-suave);
+  margin: 2em 0; font-size: .9em;
+}
+.texto p.separador + p { text-indent: 0; margin-top: 0; }
 .fin { text-align: center; color: var(--acento); margin: 3rem 0; font-size: 1.3rem; }
 .fuente {
   font-size: .82rem; color: var(--tinta-suave); border-top: 1px solid var(--borde);
